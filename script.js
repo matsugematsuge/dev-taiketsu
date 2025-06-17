@@ -70,6 +70,7 @@ function populateDayItems() {
             input.type = 'number';
             input.value = 0;
             input.min = 0;
+            // placeholderは固定で'分'、'数量'、'回数'
             input.placeholder = (item.input_unit_type === 'time' ? '分' : (item.per_value ? '数量' : '回数'));
             input.dataset.itemName = itemName;
             input.dataset.multiplier = item.multiplier;
@@ -86,16 +87,20 @@ function populateDayItems() {
 
                 // 時間単位の場合
                 if (item.input_unit_type === 'time') {
-                    const timeUnits = ['minute', 'hour', 'day'];
-                    timeUnits.forEach(unit => {
+                    const timeUnits = {
+                        'minute': '分',
+                        'hour': '時間',
+                        'day': '日'
+                    };
+                    for (const unitKey in timeUnits) {
                         const option = document.createElement('option');
-                        option.value = unit;
-                        option.textContent = unit;
+                        option.value = unitKey;
+                        option.textContent = timeUnits[unitKey];
                         unitSelect.appendChild(option);
-                    });
-                    unitSelect.value = item.default_unit; // デフォルト単位を設定
+                    }
+                    // デフォルトで「分」を選択
+                    unitSelect.value = 'minute';
                 } else { // 通常の数量単位の場合 (multipliers.jsonのunit_factorsから取得)
-                    // unit_factorsから'none', 'K', 'M', 'G'など数値に関連する単位のみを抽出し、動的にオプションを生成
                     const quantityUnits = Object.keys(multipliersData.unit_factors).filter(unit =>
                         unit === 'none' || unit === 'K' || unit === 'M' || unit === 'G'
                     );
