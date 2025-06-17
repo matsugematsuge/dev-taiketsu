@@ -9,103 +9,474 @@
     "day": 1440.0
   },
   "monday": {
-    "APを1消費する": { "multiplier": 375.0, "default_unit": "none" },
-    "レーダークエストを1回クリアする": { "multiplier": 30000.0, "default_unit": "none" },
-    "一度に英雄Expを660以上消費する": { "multiplier": 2.5, "default_unit": "M", "per_value": 660.0 },
-    "ドローン戦闘データを1消費する": { "multiplier": 7.5, "default_unit": "K", "input_unit_type": "quantity" }, <-- ここに修正
-    "ドローンギアを1個消費する": { "multiplier": 6250.0, "default_unit": "none" },
-    "食料を100採集する": { "multiplier": 50.0, "default_unit": "none" },
-    "鋼材を100採集する": { "multiplier": 50.0, "default_unit": "none" },
-    "金貨を100採集する": { "multiplier": 50.0, "default_unit": "none" },
-    "チップ宝箱の開封でチップ材料(上級)を1点獲得": { "multiplier": 2812.5, "default_unit": "none" }
+    "APを1消費する": {
+      "multiplier": 375.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "レーダークエストを1回クリアする": {
+      "multiplier": 30000.0,
+      "default_unit": "none",
+      "category": ["レーダー", "達人", "達人Ⅱ"]
+    },
+    "一度に英雄Expを660以上消費する": {
+      "multiplier": 2.5,
+      "default_unit": "M",
+      "per_value": 660.0,
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドローン戦闘データを1消費する": {
+      "multiplier": 7.5,
+      "default_unit": "K",
+      "input_unit_type": "quantity",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドローンギアを1個消費する": {
+      "multiplier": 6250.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "食料を100採集する": {
+      "multiplier": 50.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "鋼材を100採集する": {
+      "multiplier": 50.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "金貨を100採集する": {
+      "multiplier": 50.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "チップ宝箱の開封でチップ材料(上級)を1点獲得": {
+      "multiplier": 2812.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    }
   },
   "tuesday": {
-    "建造の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "施設建設で戦力を1獲得する": { "multiplier": 30.0, "default_unit": "none" },
-    "UR貿易輸送車を1回発車する": { "multiplier": 300000.0, "default_unit": "none" },
-    "UR極秘任務を1回遂行する": { "multiplier": 225000.0, "default_unit": "none" },
-    "生存者募集を1回行う": { "multiplier": 4500.0, "default_unit": "none" }
+    "建造の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "施設建設で戦力を1獲得する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["施設", "達人", "達人Ⅱ"]
+    },
+    "UR貿易輸送車を1回発車する": {
+      "multiplier": 300000.0,
+      "default_unit": "none",
+      "category": ["基地間貿易", "達人", "達人Ⅱ"]
+    },
+    "UR極秘任務を1回遂行する": {
+      "multiplier": 225000.0,
+      "default_unit": "none",
+      "category": ["隠密機動隊", "達人", "達人Ⅱ"]
+    },
+    "生存者募集を1回行う": {
+      "multiplier": 4500.0,
+      "default_unit": "none",
+      "category": ["生存者募集", "達人", "達人Ⅱ"]
+    }
   },
   "wednesday": {
-    "科学研究の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "知恵の勲章を1枚消費する": { "multiplier": 750.0, "default_unit": "none" },
-    "レーダークエストを1回クリアする": { "multiplier": 30000.0, "default_unit": "none" },
-    "Lv.1ドローン宝箱を開ける": { "multiplier": 2750.0, "default_unit": "none" },
-    "Lv.2ドローン宝箱を開ける": { "multiplier": 8250.0, "default_unit": "none" },
-    "Lv.3ドローン宝箱を開ける": { "multiplier": 25000.0, "default_unit": "none" },
-    "Lv.4ドローン宝箱を開ける": { "multiplier": 75000.0, "default_unit": "none" },
-    "Lv.5ドローン宝箱を開ける": { "multiplier": 225000.0, "default_unit": "none" },
-    "Lv.6ドローン宝箱を開ける": { "multiplier": 675000.0, "default_unit": "none" },
-    "Lv.7ドローン宝箱を開ける": { "multiplier": 2025000.0, "default_unit": "none" }
+    "科学研究の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "施設建設で戦力を1獲得する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["施設", "達人", "達人Ⅱ"]
+    },
+    "知恵の勲章を1枚消費する": {
+      "multiplier": 750.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "レーダークエストを1回クリアする": {
+      "multiplier": 30000.0,
+      "default_unit": "none",
+      "category": ["レーダー", "達人", "達人Ⅱ"]
+    },
+    "Lv.1ドローン宝箱を開ける": {
+      "multiplier": 2750.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.2ドローン宝箱を開ける": {
+      "multiplier": 8250.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.3ドローン宝箱を開ける": {
+      "multiplier": 25000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.4ドローン宝箱を開ける": {
+      "multiplier": 75000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.5ドローン宝箱を開ける": {
+      "multiplier": 225000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.6ドローン宝箱を開ける": {
+      "multiplier": 675000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.7ドローン宝箱を開ける": {
+      "multiplier": 2025000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    }
   },
   "thursday": {
-    "英雄を1回募集する": { "multiplier": 4500.0, "default_unit": "none" },
-    "一度に英雄Expを660以上消費する": { "multiplier": 2.5, "default_unit": "M", "per_value": 660.0 },
-    "UR英雄かけらを1枚消費する": { "multiplier": 25000.0, "default_unit": "none" },
-    "SSR英雄かけらを1枚消費する": { "multiplier": 8750.0, "default_unit": "none" },
-    "SR英雄かけらを1枚消費する": { "multiplier": 2500.0, "default_unit": "none" },
-    "スキルメダルを1枚消費する": { "multiplier": 30.0, "default_unit": "K", "input_unit_type": "quantity" }, <-- ここに修正
-    "専用武装のかけらを1枚消費する": { "multiplier": 25000.0, "default_unit": "none" }
+    "英雄を1回募集する": {
+      "multiplier": 4500.0,
+      "default_unit": "none",
+      "category": ["募集", "達人", "達人Ⅱ"]
+    },
+    "一度に英雄Expを660以上消費する": {
+      "multiplier": 2.5,
+      "default_unit": "M",
+      "per_value": 660.0,
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "UR英雄かけらを1枚消費する": {
+      "multiplier": 25000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "SSR英雄かけらを1枚消費する": {
+      "multiplier": 8750.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "SR英雄かけらを1枚消費する": {
+      "multiplier": 2500.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "スキルメダルを1枚消費する": {
+      "multiplier": 30.0,
+      "default_unit": "K",
+      "input_unit_type": "quantity",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "専用武装のかけらを1枚消費する": {
+      "multiplier": 25000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    }
   },
   "friday": {
-    "レーダークエストを1回クリアする": { "multiplier": 30000.0, "default_unit": "none" },
-    "建造の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "施設建設で戦力を1獲得する": { "multiplier": 30.0, "default_unit": "none" },
-    "科学研究の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "科学研究で戦力を1獲得する": { "multiplier": 30.0, "default_unit": "none" },
-    "訓練の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "LV.1兵士を1人訓練する": { "multiplier": 60.0, "default_unit": "none" },
-    "LV.2兵士を1人訓練する": { "multiplier": 90.0, "default_unit": "none" },
-    "LV.3兵士を1人訓練する": { "multiplier": 120.0, "default_unit": "none" },
-    "LV.4兵士を1人訓練する": { "multiplier": 150.0, "default_unit": "none" },
-    "LV.5兵士を1人訓練する": { "multiplier": 180.0, "default_unit": "none" },
-    "LV.6兵士を1人訓練する": { "multiplier": 210.0, "default_unit": "none" },
-    "LV.7兵士を1人訓練する": { "multiplier": 240.0, "default_unit": "none" },
-    "LV.8兵士を1人訓練する": { "multiplier": 270.0, "default_unit": "none" },
-    "LV.9兵士を1人訓練する": { "multiplier": 300.0, "default_unit": "none" },
-    "LV.10兵士を1人訓練する": { "multiplier": 330.0, "default_unit": "none" },
-    "ドミネーターのかけらを1枚消費する": { "multiplier": 25000.0, "default_unit": "none" },
-    "ドミネーターの訓練ノートを100個消費する": { "multiplier": 1562.5, "default_unit": "none", "per_value": 100.0 },
-    "ドミネーターの訓練証明書を1枚消費する": { "multiplier": 3750.0, "default_unit": "none" },
-    "ドミネーターの連携の証を1枚消費する": { "multiplier": 75000.0, "default_unit": "none" },
-    "ドミネーターのスキルメダルを1枚消費する": { "multiplier": 12.5, "default_unit": "none" }
+    "レーダークエストを1回クリアする": {
+      "multiplier": 30000.0,
+      "default_unit": "none",
+      "category": ["レーダー", "達人", "達人Ⅱ"]
+    },
+    "建造の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "施設建設で戦力を1獲得する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["施設", "達人", "達人Ⅱ"]
+    },
+    "科学研究の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "科学研究で戦力を1獲得する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["科学", "達人", "達人Ⅱ"]
+    },
+    "訓練の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "LV.1兵士を1人訓練する": {
+      "multiplier": 60.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.2兵士を1人訓練する": {
+      "multiplier": 90.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.3兵士を1人訓練する": {
+      "multiplier": 120.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.4兵士を1人訓練する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.5兵士を1人訓練する": {
+      "multiplier": 180.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.6兵士を1人訓練する": {
+      "multiplier": 210.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.7兵士を1人訓練する": {
+      "multiplier": 240.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.8兵士を1人訓練する": {
+      "multiplier": 270.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.9兵士を1人訓練する": {
+      "multiplier": 300.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "LV.10兵士を1人訓練する": {
+      "multiplier": 330.0,
+      "default_unit": "none",
+      "category": ["訓練", "達人", "達人Ⅱ"]
+    },
+    "ドミネーターのかけらを1枚消費する": {
+      "multiplier": 25000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドミネーターの訓練ノートを100個消費する": {
+      "multiplier": 1562.5,
+      "default_unit": "none",
+      "per_value": 100.0,
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドミネーターの訓練証明書を1枚消費する": {
+      "multiplier": 3750.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドミネーターの連携の証を1枚消費する": {
+      "multiplier": 75000.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "ドミネーターのスキルメダルを1枚消費する": {
+      "multiplier": 12.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    }
   },
   "saturday": {
-    "UR貿易輸送車を1回発車する": { "multiplier": 300000.0, "default_unit": "none" },
-    "UR極秘任務を1回遂行する": { "multiplier": 225000.0, "default_unit": "none" },
-    "建造の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "科学研究の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "訓練の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "治療の残り時間を1分短縮する": { "multiplier": 150.0, "default_unit": "none", "input_unit_type": "time" },
-    "相手連盟のLv.1兵士を1体撃破する": { "multiplier": 30.0, "default_unit": "none" },
-    "相手連盟のLv.2兵士を1体撃破": { "multiplier": 45.0, "default_unit": "none" },
-    "相手連盟のLv.3兵士を1体撃破する": { "multiplier": 60.0, "default_unit": "none" },
-    "相手連盟のLv.4兵士を1体撃破する": { "multiplier": 75.0, "default_unit": "none" },
-    "相手連盟のLv.5兵士を1体撃破する": { "multiplier": 90.0, "default_unit": "none" },
-    "相手連盟のLv.6兵士を1体撃破する": { "multiplier": 105.0, "default_unit": "none" },
-    "相手連盟のLv.7兵士を1体撃破する": { "multiplier": 120.0, "default_unit": "none" },
-    "相手連盟のLv.8兵士を1体撃破する": { "multiplier": 135.0, "default_unit": "none" },
-    "相手連盟のLv.9兵士を1体撃破する": { "multiplier": 150.0, "default_unit": "none" },
-    "相手連盟のLv.10兵士を1体撃破する": { "multiplier": 165.0, "default_unit": "none" },
-    "Lv.1兵士を1体撃破する": { "multiplier": 6.0, "default_unit": "none" },
-    "Lv.2兵士を1体撃破する": { "multiplier": 9.0, "default_unit": "none" },
-    "Lv.3兵士を1体撃破する": { "multiplier": 12.0, "default_unit": "none" },
-    "Lv.4兵士を1体撃破する": { "multiplier": 15.0, "default_unit": "none" },
-    "Lv.5兵士を1体撃破する": { "multiplier": 18.0, "default_unit": "none" },
-    "Lv.6兵士を1体撃破する": { "multiplier": 21.0, "default_unit": "none" },
-    "v.7兵士を1体撃破する": { "multiplier": 24.0, "default_unit": "none" },
-    "Lv.8兵士を1体撃破する": { "multiplier": 27.0, "default_unit": "none" },
-    "Lv.9兵士を1体撃破する": { "multiplier": 30.0, "default_unit": "none" },
-    "Lv.10兵士を1体撃破する": { "multiplier": 33.0, "default_unit": "none" },
-    "Lv.1兵士を1体撃破される": { "multiplier": 5.0, "default_unit": "none" },
-    "Lv.2兵士を1体撃破される": { "multiplier": 7.5, "default_unit": "none" },
-    "Lv.3兵士を1体撃破される": { "multiplier": 10.0, "default_unit": "none" },
-    "Lv.4兵士を1体撃破される": { "multiplier": 12.5, "default_unit": "none" },
-    "Lv.5兵士を1体撃破される": { "multiplier": 15.0, "default_unit": "none" },
-    "Lv.6兵士を1体撃破される": { "multiplier": 17.5, "default_unit": "none" },
-    "v.7兵士を1体撃破される": { "multiplier": 20.0, "default_unit": "none" },
-    "Lv.8兵士を1体撃破される": { "multiplier": 22.5, "default_unit": "none" },
-    "Lv.9兵士を1体撃破される": { "multiplier": 25.0, "default_unit": "none" },
-    "Lv.10兵士を1体撃破される": { "multiplier": 27.5, "default_unit": "none" }
+    "UR貿易輸送車を1回発車する": {
+      "multiplier": 300000.0,
+      "default_unit": "none",
+      "category": ["基地間貿易", "達人", "達人Ⅱ"]
+    },
+    "UR極秘任務を1回遂行する": {
+      "multiplier": 225000.0,
+      "default_unit": "none",
+      "category": ["隠密機動隊", "達人", "達人Ⅱ"]
+    },
+    "建造の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "科学研究の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "訓練の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "治療の残り時間を1分短縮する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "input_unit_type": "time",
+      "category": ["加速", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.1兵士を1体撃破する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.2兵士を1体撃破": {
+      "multiplier": 45.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.3兵士を1体撃破する": {
+      "multiplier": 60.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.4兵士を1体撃破する": {
+      "multiplier": 75.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.5兵士を1体撃破する": {
+      "multiplier": 90.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.6兵士を1体撃破する": {
+      "multiplier": 105.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.7兵士を1体撃破する": {
+      "multiplier": 120.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.8兵士を1体撃破する": {
+      "multiplier": 135.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.9兵士を1体撃破する": {
+      "multiplier": 150.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "相手連盟のLv.10兵士を1体撃破する": {
+      "multiplier": 165.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.1兵士を1体撃破する": {
+      "multiplier": 6.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.2兵士を1体撃破する": {
+      "multiplier": 9.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.3兵士を1体撃破する": {
+      "multiplier": 12.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.4兵士を1体撃破する": {
+      "multiplier": 15.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.5兵士を1体撃破する": {
+      "multiplier": 18.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.6兵士を1体撃破する": {
+      "multiplier": 21.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "v.7兵士を1体撃破する": {
+      "multiplier": 24.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.8兵士を1体撃破する": {
+      "multiplier": 27.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.9兵士を1体撃破する": {
+      "multiplier": 30.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.10兵士を1体撃破する": {
+      "multiplier": 33.0,
+      "default_unit": "none",
+      "category": ["敵討伐", "達人", "達人Ⅱ"]
+    },
+    "Lv.1兵士を1体撃破される": {
+      "multiplier": 5.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.2兵士を1体撃破される": {
+      "multiplier": 7.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.3兵士を1体撃破される": {
+      "multiplier": 10.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.4兵士を1体撃破される": {
+      "multiplier": 12.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.5兵士を1体撃破される": {
+      "multiplier": 15.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.6兵士を1体撃破される": {
+      "multiplier": 17.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "v.7兵士を1体撃破される": {
+      "multiplier": 20.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.8兵士を1体撃破される": {
+      "multiplier": 22.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.9兵士を1体撃破される": {
+      "multiplier": 25.0,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    },
+    "Lv.10兵士を1体撃破される": {
+      "multiplier": 27.5,
+      "default_unit": "none",
+      "category": ["なし", "達人", "達人Ⅱ"]
+    }
   }
 }
