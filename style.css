@@ -1,0 +1,233 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.tabs {
+    margin-top: 20px;
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.tab-button {
+    background-color: #eee;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: -2px;
+}
+
+.tab-content {
+    display: none;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+}
+
+.input-group label {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    text-align: left;
+    font-size: 15px;
+}
+
+.input-group input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.input-group select {
+    padding: 8px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+    width: 65px;
+    flex-shrink: 0;
+}
+
+.input-group .multiplier-display {
+    margin-right: 0;
+    color: #666;
+    font-size: 14px;
+    flex-shrink: 0;
+    padding-left: 0;
+}
+
+/* ここを修正 */
+.button-group {
+    display: flex;
+    justify-content: center; /* 中央揃えに */
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 0 10px; は不要か、必要に応じて調整 */
+    gap: 20px; /* ボタン間のスペース */
+}
+
+.reset-button,
+.ok-button {
+    width: 100px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.reset-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #c82333;
+}
+
+.ok-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.ok-button:hover {
+    background-color: #0056b3;
+}
+/* 修正ここまで */
+
+.total-display {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    color: #333;
+}
+
+.total-display span {
+    color: #007bff;
+    margin-left: 10px;
+}
+
+/* スマホ表示時の調整 */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    .tab-button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .input-group label {
+        margin-bottom: 5px;
+        flex-basis: auto;
+    }
+    .input-group input[type="number"] {
+        width: calc(100% - 15px);
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .input-group select {
+        width: calc(100% - 15px);
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .input-group .multiplier-display {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 5px;
+        width: 100%;
+        text-align: left;
+    }
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* スマホ時のボタン間のスペース */
+    }
+    .reset-button,
+    .ok-button {
+        width: 80%;
+        margin-bottom: 0; /* 縦並びなので個別のマージンは不要 */
+    }
+    .total-display {
+        text-align: left;
+    }
+}
