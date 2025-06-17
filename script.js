@@ -51,7 +51,6 @@ function populateDayItems() {
     const day = document.getElementById('dayOfWeek').value;
     const itemsContainer = document.getElementById('itemsContainer');
     itemsContainer.innerHTML = '';
-    // let totalPoints = 0; // ここでの初期化は不要、calculateTotalPoints() で行われる
 
     if (multipliersData[day]) {
         for (const itemName in multipliersData[day]) {
@@ -67,41 +66,48 @@ function populateDayItems() {
             const itemControls = document.createElement('div');
             itemControls.classList.add('item-controls');
 
-            if (item.input_unit_type === 'time') {
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.value = 0;
-                input.min = 0;
-                input.placeholder = '分';
-                input.dataset.itemName = itemName;
-                input.dataset.multiplier = item.multiplier;
-                input.dataset.unitFactor = multipliersData.unit_factors[item.default_unit];
-                input.addEventListener('input', calculateTotalPoints);
-                itemControls.appendChild(input);
-            } else if (item.per_value) {
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.value = 0;
-                input.min = 0;
-                input.placeholder = '数量';
-                input.dataset.itemName = itemName;
-                input.dataset.multiplier = item.multiplier;
-                input.dataset.unitFactor = multipliersData.unit_factors[item.default_unit];
-                input.dataset.perValue = item.per_value;
-                input.addEventListener('input', calculateTotalPoints);
-                itemControls.appendChild(input);
-            } else {
-                const input = document.createElement('input');
-                input.type = 'number';
-                input.value = 0;
-                input.min = 0;
-                input.placeholder = '回数';
-                input.dataset.itemName = itemName;
-                input.dataset.multiplier = item.multiplier;
-                input.dataset.unitFactor = multipliersData.unit_factors[item.default_unit];
-                input.addEventListener('input', calculateTotalPoints);
-                itemControls.appendChild(input);
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.value = 0;
+            input.min = 0;
+            input.placeholder = (item.input_unit_type === 'time' ? '分' : (item.per_value ? '数量' : '回数'));
+            input.dataset.itemName = itemName;
+            input.dataset.multiplier = item.multiplier;
+            input.dataset.perValue = item.per_value || 1; // per_valueがない場合は1として扱う
+            input.dataset.inputUnitType = item.input_unit_type || 'quantity'; // input_unit_typeがない場合はquantityとして扱う
+            input.addEventListener('input', calculateTotalPoints);
+            itemControls.appendChild(input);
+
+            // 単位選択のプルダウンを追加 (default_unitが'none'以外の場合)
+            if (item.default_unit !== 'none' || item.input_unit_type === 'time') {
+                const unitSelect = document.createElement('select');
+                unitSelect.dataset.itemName = itemName; // どの項目の単位か識別するため
+                unitSelect.classList.add('unit-select');
+
+                // 時間単位の場合
+                if (item.input_unit_type === 'time') {
+                    const timeUnits = ['minute', 'hour', 'day'];
+                    timeUnits.forEach(unit => {
+                        const option = document.createElement('option');
+                        option.value = unit;
+                        option.textContent = unit;
+                        unitSelect.appendChild(option);
+                    });
+                    unitSelect.value = item.default_unit; // デフォルト単位を設定
+                } else { // 通常の数量単位の場合
+                    const quantityUnits = ['none', 'K', 'M', 'G'];
+                    quantityUnits.forEach(unit => {
+                        const option = document.createElement('option');
+                        option.value = unit;
+                        option.textContent = unit;
+                        unitSelect.appendChild(option);
+                    });
+                    unitSelect.value = item.default_unit; // JSONで指定されたデフォルト単位を選択
+                }
+                unitSelect.addEventListener('change', calculateTotalPoints);
+                itemControls.appendChild(unitSelect);
             }
+
             itemDiv.appendChild(itemControls);
             itemsContainer.appendChild(itemDiv);
         }
@@ -120,12 +126,20 @@ function calculateTotalPoints() {
         const value = parseFloat(input.value) || 0;
         let points = 0;
 
+        // 単位の選択を考慮
+        let currentUnitFactor = multipliersData.unit_factors[item.default_unit]; // デフォルトの単位ファクター
+        const unitSelect = input.parentNode.querySelector('.unit-select'); // 同じ親要素内の単位選択プルダウンを探す
+
+        if (unitSelect && multipliersData.unit_factors[unitSelect.value]) {
+            currentUnitFactor = multipliersData.unit_factors[unitSelect.value];
+        }
+
         if (item.input_unit_type === 'time') {
-            points = value * item.multiplier;
+            points = value * item.multiplier * currentUnitFactor;
         } else if (item.per_value) {
-            points = (value / item.per_value) * item.multiplier * multipliersData.unit_factors[item.default_unit];
+            points = (value / item.per_value) * item.multiplier * currentUnitFactor;
         } else {
-            points = value * item.multiplier * multipliersData.unit_factors[item.default_unit];
+            points = value * item.multiplier * currentUnitFactor;
         }
 
         // カテゴリーに基づいてインセンティブボーナスを適用
@@ -229,8 +243,7 @@ function loadIncentiveLevels() {
         }
     } else {
         // 保存されたレベルがない場合、initializeIncentiveSettingsですでにデフォルト設定されているため、
-        // ここでは特に何もしなくても良い。ただし、明示的にデフォルト値を再設定したい場合はここに記述。
-        // 例: initializeIncentiveSettings(); // これを再度呼び出すとUIも再描画される
+        // ここでは特に何もしなくても良い。
     }
     calculateTotalPoints(); // 読み込み後に合計ポイントを再計算
 }
