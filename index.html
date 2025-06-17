@@ -3,74 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>連盟対決ポイント計算機</title>
+    <title>イベントポイント計算機</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>連盟対決ポイント計算機</h1>
+        <h1>イベントポイント計算機</h1>
 
         <div class="tab-buttons">
-            <button class="tab-button active" onclick="openTab(event, 'monday')">月曜日</button>
-            <button class="tab-button" onclick="openTab(event, 'tuesday')">火曜日</button>
-            <button class="tab-button" onclick="openTab(event, 'wednesday')">水曜日</button>
-            <button class="tab-button" onclick="openTab(event, 'thursday')">木曜日</button>
-            <button class="tab-button" onclick="openTab(event, 'friday')">金曜日</button>
-            <button class="tab-button" onclick="openTab(event, 'saturday')">土曜日</button>
+            <button class="tab-button active" onclick="openTab(event, 'dailyPoints')">デイリーポイント</button>
+            <button class="tab-button" onclick="openTab(event, 'incentiveSettings')">インセンティブ設定</button>
         </div>
 
-        <div id="monday" class="tab-content active">
-            <h2>月曜日</h2>
-            <div id="inputContainer_monday" class="input-container">
+        <div id="dailyPoints" class="tab-content active">
+            <div class="day-select">
+                <label for="dayOfWeek">曜日を選択:</label>
+                <select id="dayOfWeek">
+                    <option value="monday">月曜日</option>
+                    <option value="tuesday">火曜日</option>
+                    <option value="wednesday">水曜日</option>
+                    <option value="thursday">木曜日</option>
+                    <option value="friday">金曜日</option>
+                    <option value="saturday">土曜日</option>
+                </select>
+            </div>
+
+            <div id="itemsContainer">
                 </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_monday">0.0</span>
+
+            <div class="total-points">
+                合計ポイント: <span id="totalPoints">0</span>
             </div>
         </div>
 
-        <div id="tuesday" class="tab-content">
-            <h2>火曜日</h2>
-            <div id="inputContainer_tuesday" class="input-container">
+        <div id="incentiveSettings" class="tab-content">
+            <h2>インセンティブ設定</h2>
+            <div id="incentiveOptions">
                 </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_tuesday">0.0</span>
-            </div>
-        </div>
-
-        <div id="wednesday" class="tab-content">
-            <h2>水曜日</h2>
-            <div id="inputContainer_wednesday" class="input-container">
-                </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_wednesday">0.0</span>
-            </div>
-        </div>
-
-        <div id="thursday" class="tab-content">
-            <h2>木曜日</h2>
-            <div id="inputContainer_thursday" class="input-container">
-                </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_thursday">0.0</span>
-            </div>
-        </div>
-
-        <div id="friday" class="tab-content">
-            <h2>金曜日</h2>
-            <div id="inputContainer_friday" class="input-container">
-                </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_friday">0.0</span>
-            </div>
-        </div>
-
-        <div id="saturday" class="tab-content">
-            <h2>土曜日</h2>
-            <div id="inputContainer_saturday" class="input-container">
-                </div>
-            <div class="total-display">
-                合計ポイント: <span id="total_saturday">0.0</span>
-            </div>
         </div>
     </div>
 
