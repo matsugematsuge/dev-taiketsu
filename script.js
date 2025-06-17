@@ -219,6 +219,7 @@ function initializeIncentiveSettings() {
         // 初期化時に incentiveLevels オブジェクトにデフォルト値を設定
         incentiveLevels[incentiveName] = maxLevel * 5;
 
+        // 変更イベントリスナーを追加
         select.addEventListener('change', (event) => {
             const selectedLevel = parseInt(event.target.value);
             const name = event.target.dataset.incentiveName;
@@ -252,7 +253,7 @@ function loadIncentiveLevels() {
             }
         }
     } else {
-        // 保存されたレベルがない場合、initializeIncentiveSettingsですでにデフォルト設定されているため、
+        // 保存されたレベルがない場合、initializeIncentiveSettingsで設定されたデフォルト値が使用されるため、
         // ここでは特に何もしなくても良い。
     }
     calculateTotalPoints(); // 読み込み後に合計ポイントを再計算
