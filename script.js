@@ -147,7 +147,7 @@ function calculateTotalPoints() {
             item.category.forEach(cat => {
                 const incentiveKey = getIncentiveKey(cat);
                 if (incentiveKey && incentiveLevels[incentiveKey] !== undefined) { // incentiveKeyが存在し、レベルが設定されているか確認
-                    const bonusPercentage = incentiveLevels[incentiveKey] / 100;
+                    const bonusPercentage = incentiveLevels[incent incentiveKey] / 100;
                     points *= (1 + bonusPercentage);
                 }
             });
@@ -197,6 +197,12 @@ function initializeIncentiveSettings() {
         select.id = `incentive-${incentiveName.replace(/[:：\s]/g, '_')}-level`;
         select.dataset.incentiveName = incentiveName;
 
+        // Lv.0 (0%) を最初に追加
+        const zeroOption = document.createElement('option');
+        zeroOption.value = 0;
+        zeroOption.textContent = `Lv.0 (0%)`;
+        select.appendChild(zeroOption);
+
         for (let i = 1; i <= maxLevel; i++) {
             const option = document.createElement('option');
             option.value = i * 5; // Lv.1 = 5%, Lv.2 = 10% ...
@@ -205,6 +211,7 @@ function initializeIncentiveSettings() {
         }
 
         // デフォルトで最大Lvを選択
+        // Lv.0も考慮に入れるため、デフォルト値は明示的に設定する
         select.value = maxLevel * 5;
         // 初期化時に incentiveLevels オブジェクトにデフォルト値を設定
         incentiveLevels[incentiveName] = maxLevel * 5;
