@@ -78,7 +78,7 @@ function populateDayItems() {
             input.addEventListener('input', calculateTotalPoints);
             itemControls.appendChild(input);
 
-            // 単位選択のプルダウンを追加 (default_unitが'none'以外の場合)
+            // 単位選択のプルダウンを追加 (default_unitが'none'以外の場合、または時間タイプの場合)
             if (item.default_unit !== 'none' || item.input_unit_type === 'time') {
                 const unitSelect = document.createElement('select');
                 unitSelect.dataset.itemName = itemName; // どの項目の単位か識別するため
@@ -94,8 +94,11 @@ function populateDayItems() {
                         unitSelect.appendChild(option);
                     });
                     unitSelect.value = item.default_unit; // デフォルト単位を設定
-                } else { // 通常の数量単位の場合
-                    const quantityUnits = ['none', 'K', 'M', 'G'];
+                } else { // 通常の数量単位の場合 (multipliers.jsonのunit_factorsから取得)
+                    // unit_factorsから'none', 'K', 'M', 'G'など数値に関連する単位のみを抽出し、動的にオプションを生成
+                    const quantityUnits = Object.keys(multipliersData.unit_factors).filter(unit =>
+                        unit === 'none' || unit === 'K' || unit === 'M' || unit === 'G'
+                    );
                     quantityUnits.forEach(unit => {
                         const option = document.createElement('option');
                         option.value = unit;
@@ -147,7 +150,7 @@ function calculateTotalPoints() {
             item.category.forEach(cat => {
                 const incentiveKey = getIncentiveKey(cat);
                 if (incentiveKey && incentiveLevels[incentiveKey] !== undefined) { // incentiveKeyが存在し、レベルが設定されているか確認
-                    const bonusPercentage = incentiveLevels[incent incentiveKey] / 100;
+                    const bonusPercentage = incentiveLevels[incentiveKey] / 100;
                     points *= (1 + bonusPercentage);
                 }
             });
